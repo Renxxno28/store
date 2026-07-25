@@ -212,7 +212,7 @@
 </head>
 <body oncontextmenu="return false;">
 
-    <!-- Tombol Kembali Statis -->
+    <!-- Tombol Kembali Statis (Hanya ada di halaman Monetloader) -->
     <a href="index.html" class="btn-back">
         <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
         Kembali
@@ -251,111 +251,85 @@
             </div>
         </div>
     </section>
-
-    <!-- Katalog Produk -->
+        <!-- Katalog Produk Lua Terfokus (PERBAIKAN BUG KLIK) -->
     <section class="products-section animate-up delay-2">
         <div class="grid">
             
-            <div class="product-card" onclick="openProduct('Teleport Menu', 'Rp 38.000', 'Cheats Module', 'FITUR UTAMA:
-• Teleport Market & Checkpoint otomatis.
-• UI Menu Minimalis & interaktif.
-• Notifikasi proses di layar.
-• Sangat ringan, 0% FPS drop.
-
-INFO PENTING:
-Support semua jenis Server SAMP dan Client. Sistem Anti-Ban 95% aman digunakan.', '[Command : /Tpmenu]
-Lalu tandai di Map lokasi yang ingin dikunjungi. Setelah selesai menandai, klik Marker.
-
-Sebaliknya, jika ingin menggunakan Checkpoint (pada Misi atau GPS), klik opsi Checkpoint. Jangan bergerak hingga muncul notifikasi Teleport Berhasil di chat.')">
+            <!-- Produk 1 -->
+            <div class="product-card" onclick="openProduct('Teleport Menu', 'Rp 38.000', 'Cheats Module', 'FITUR UTAMA:\n• Teleport Market & Checkpoint otomatis.\n• UI Menu Minimalis & interaktif.\n• Notifikasi proses di layar.\n• Sangat ringan, 0% FPS drop.\n\nINFO PENTING:\nSupport semua jenis Server SAMP dan Client. Sistem Anti-Ban 95% aman digunakan.', '[Command : /Tpmenu]\nLalu tandai di Map lokasi yang ingin dikunjungi. Setelah selesai menandai, klik Marker.\n\nSebaliknya, jika ingin menggunakan Checkpoint (pada Misi atau GPS), klik opsi Checkpoint. Jangan bergerak hingga muncul notifikasi Teleport Berhasil di chat.')">
                 <span class="category-tag">Cheats Module</span>
                 <h3>Teleport Menu</h3>
                 <p>Tampilan UI minimalis dengan dukungan teleportasi akurat. Support all server, anti-ban 95%.</p>
                 <div class="card-bottom">
                     <span class="price">Rp 38.000</span>
-                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                    <div class="buy-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
                 </div>
             </div>
 
-            <div class="product-card" onclick="openProduct('FPS Optimizer', 'Rp 15.000', 'Performance', 'FITUR UTAMA:
-• Pembersihan streaming memory otomatis.
-• Bypass game crash di area padat (mapping berat).
-• Menstabilkan FPS di keramaian player.
-
-INFO PENTING:
-100% Aman, tidak terdeteksi sebagai cheat. Esensial bagi perangkat yang membutuhkan optimasi ekstra.', '[Isi panduan pengaturan memori dan penyesuaian limit FPS untuk skrip ini akan dicantumkan di sini.]')">
+            <!-- Produk 2 -->
+            <div class="product-card" onclick="openProduct('FPS Optimizer', 'Rp 15.000', 'Performance', 'FITUR UTAMA:\n• Pembersihan streaming memory otomatis.\n• Bypass game crash di area padat (mapping berat).\n• Menstabilkan FPS di keramaian player.\n\nINFO PENTING:\n100% Aman, tidak terdeteksi sebagai cheat. Esensial bagi perangkat yang membutuhkan optimasi ekstra.', '[Isi panduan pengaturan memori dan penyesuaian limit FPS untuk skrip ini akan dicantumkan di sini.]')">
                 <span class="category-tag">Performance</span>
                 <h3>FPS Optimizer</h3>
                 <p>Membersihkan streaming memory secara otomatis untuk mencegah crash di area padat.</p>
                 <div class="card-bottom">
                     <span class="price">Rp 15.000</span>
-                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                    <div class="buy-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
                 </div>
             </div>
 
-            <div class="product-card" onclick="openProduct('Vehicle Teleport', 'Rp 18.000', 'Cheats Module', 'FITUR UTAMA:
-• Tarik semua jenis kendaraan dalam radius tertentu.
-• Fitur masuk ke kendaraan secara instan tanpa animasi.
-• Anti-Lag & Anti-Ban server-side.
-
-INFO PENTING:
-Sangat membantu efisiensi waktu saat Roleplay berjalan intensif.', '[Isi instruksi mengenai limitasi jarak penarikan kendaraan dan daftar perintah akan dicantumkan di sini.]')">
+            <!-- Produk 3 -->
+            <div class="product-card" onclick="openProduct('Vehicle Teleport', 'Rp 18.000', 'Cheats Module', 'FITUR UTAMA:\n• Tarik semua jenis kendaraan dalam radius tertentu.\n• Fitur masuk ke kendaraan secara instan tanpa animasi.\n• Anti-Lag & Anti-Ban server-side.\n\nINFO PENTING:\nSangat membantu efisiensi waktu saat Roleplay berjalan intensif.', '[Isi instruksi mengenai limitasi jarak penarikan kendaraan dan daftar perintah akan dicantumkan di sini.]')">
                 <span class="category-tag">Cheats Module</span>
                 <h3>Vehicle Teleport</h3>
                 <p>Sistem penarikan kendaraan instan. Efisiensi tinggi dengan perlindungan anti-ban terbaik.</p>
                 <div class="card-bottom">
                     <span class="price">Rp 18.000</span>
-                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                    <div class="buy-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
                 </div>
             </div>
 
-            <div class="product-card" onclick="openProduct('Maphack ESP', 'Rp 28.000', 'Visual Enhancement', 'FITUR UTAMA:
-• ESP NameTag Jarak Jauh.
-• ESP Health & Armor Bar.
-• ESP Line (Garis penunjuk player).
-• Radar Map kustom.
-• ESP Weapon (Mengetahui senjata musuh).
-
-INFO PENTING:
-Keunggulan taktikal penuh untuk perang atau kompetitif. Render distance dapat diatur via in-game.', '[Isi panduan pengaktifan toggle ESP dan cara membaca radar akan dicantumkan di sini.]')">
+            <!-- Produk 4 -->
+            <div class="product-card" onclick="openProduct('Maphack ESP', 'Rp 28.000', 'Visual Enhancement', 'FITUR UTAMA:\n• ESP NameTag Jarak Jauh.\n• ESP Health & Armor Bar.\n• ESP Line (Garis penunjuk player).\n• Radar Map kustom.\n• ESP Weapon (Mengetahui senjata musuh).\n\nINFO PENTING:\nKeunggulan taktikal penuh untuk perang atau kompetitif. Render distance dapat diatur via in-game.', '[Isi panduan pengaktifan toggle ESP dan cara membaca radar akan dicantumkan di sini.]')">
                 <span class="category-tag">Visual Enhancement</span>
                 <h3>Maphack ESP Menu</h3>
                 <p>Sistem ESP lengkap (Name, Health, Armor, Weapon, Line). Jarak pandang maksimal.</p>
                 <div class="card-bottom">
                     <span class="price">Rp 28.000</span>
-                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                    <div class="buy-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
                 </div>
             </div>
 
-            <div class="product-card" onclick="openProduct('Instant Repair', 'Rp 38.000', 'Mechanic Module', 'FITUR UTAMA:
-• Fix visual bodi mobil rusak seketika.
-• Manipulasi health kendaraan (Bisa diisi sesuai keinginan).
-• Fix secara server-side (Bukan sekadar visual lokal).
-
-INFO PENTING:
-Dilengkapi perlindungan Anti-Detect dari sistem pengawasan server.', '[Isi tutorial integrasi perbaikan kendaraan dengan status mekanik akan dicantumkan di sini.]')">
+            <!-- Produk 5 -->
+            <div class="product-card" onclick="openProduct('Instant Repair', 'Rp 38.000', 'Mechanic Module', 'FITUR UTAMA:\n• Fix visual bodi mobil rusak seketika.\n• Manipulasi health kendaraan (Bisa diisi sesuai keinginan).\n• Fix secara server-side (Bukan sekadar visual lokal).\n\nINFO PENTING:\nDilengkapi perlindungan Anti-Detect dari sistem pengawasan server.', '[Isi tutorial integrasi perbaikan kendaraan dengan status mekanik akan dicantumkan di sini.]')">
                 <span class="category-tag">Mechanic Module</span>
                 <h3>Instant Repair Menu</h3>
                 <p>Perbaikan kendaraan total secara server-side. Hilangkan kerusakan visual dan mesin.</p>
                 <div class="card-bottom">
                     <span class="price">Rp 38.000</span>
-                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                    <div class="buy-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
                 </div>
             </div>
 
-            <div class="product-card" onclick="openProduct('Custom Engineering', 'Mulai Rp 10.000', 'Engineering', 'JASA PROGRAMMING CUSTOM LUA
-
-Punya alur sistem skrip sendiri? Kami siap mewujudkannya untuk Anda.
-
-KETENTUAN:
-• Harga awal penawaran Rp 10.000 (Menyesuaikan tingkat kerumitan arsitektur).
-• Clean code, dijamin ringan saat dieksekusi oleh mesin Monetloader.
-• Garansi perbaikan jika ditemukan galat (bug).', '[Isi alur pemesanan, pengiriman spesifikasi fitur, dan panduan klaim garansi akan dicantumkan di sini.]')">
+            <!-- Produk 6 -->
+            <div class="product-card" onclick="openProduct('Custom Engineering', 'Mulai Rp 10.000', 'Engineering', 'JASA PROGRAMMING CUSTOM LUA\n\nPunya alur sistem skrip sendiri? Kami siap mewujudkannya untuk Anda.\n\nKETENTUAN:\n• Harga awal penawaran Rp 10.000 (Menyesuaikan tingkat kerumitan arsitektur).\n• Clean code, dijamin ringan saat dieksekusi oleh mesin Monetloader.\n• Garansi perbaikan jika ditemukan galat (bug).', '[Isi alur pemesanan, pengiriman spesifikasi fitur, dan panduan klaim garansi akan dicantumkan di sini.]')">
                 <span class="category-tag">Engineering</span>
                 <h3>Request Custom Lua</h3>
                 <p>Konsultasikan ide arsitektur skrip Anda. Dibuat dengan presisi tinggi dan kode yang bersih.</p>
                 <div class="card-bottom">
                     <span class="price">10K+</span>
-                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                    <div class="buy-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
                 </div>
             </div>
 
@@ -366,7 +340,7 @@ KETENTUAN:
         <p>&copy; 2026 Renxxno Store. Hak cipta dilindungi undang-undang.</p>
     </footer>
 
-    <!-- ================= MODAL / POPUP CHECKOUT (STATIS HEADER/FOOTER, SCROLL BODY) ================= -->
+    <!-- ================= MODAL / POPUP CHECKOUT BERSTRUKTUR STATIS ================= -->
     <div class="modal-overlay" id="productModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">×</span>
@@ -401,7 +375,7 @@ KETENTUAN:
             <div id="step-2" class="step-container" style="display: none;">
                 <!-- Header Statis -->
                 <div class="modal-header">
-                    <h2 id="m-title" style="margin-bottom: 5px;">Pilih Metode</h2>
+                    <h2 id="m-title" style="margin-bottom: 5px; font-size: 1.8rem; font-weight: 900;">Pilih Metode</h2>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; font-weight: 300;">Transaksi diintegrasikan otomatis melalui WhatsApp.</p>
                 </div>
 
