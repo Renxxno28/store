@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renxxno Store | Premium Digital Assets</title>
+    <title>Renxxno Store | Platform Produk Digital</title>
     
     <!-- Font modern 'Outfit' -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* === TEMA MINIMALIS MODERN (HIGH-END) === */
+        /* === TEMA MINIMALIS MODERN (DIGITAL STORE) === */
         :root {
-            --bg-base: #030303;        /* Hitam pekat mewah */
-            --bg-surface: #0a0a0a;     /* Abu-abu sangat gelap untuk kartu */
+            --bg-base: #030303;        
+            --bg-surface: #0a0a0a;     
             --border-subtle: rgba(255, 255, 255, 0.08); 
             --text-primary: #ffffff;
             --text-secondary: #888888;
@@ -23,139 +23,154 @@
         
         body {
             background-color: var(--bg-base); color: var(--text-primary);
-            line-height: 1.5; overflow-x: hidden;
+            line-height: 1.6; overflow-x: hidden;
             -webkit-user-select: none; -moz-user-select: none; user-select: none;
         }
 
         a, img { -webkit-user-drag: none; user-drag: none; text-decoration: none; }
 
-        /* --- ANIMASI REVEAL ELEGAN --- */
+        /* --- ANIMASI --- */
         @keyframes revealUp {
-            0% { opacity: 0; transform: translateY(40px); filter: blur(5px); }
-            100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
-        
-        .animate-reveal { animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
+        .animate-reveal { animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.15s; }
+        .delay-2 { animation-delay: 0.3s; }
 
-        /* --- NAVIGASI MELAYANG (FLOATING CAPSULE) --- */
+        /* --- NAVIGASI MELAYANG (KAPSUL) --- */
         nav {
             position: fixed; top: 30px; left: 50%; transform: translateX(-50%);
             width: 90%; max-width: 1200px; z-index: 100;
-            background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+            background: rgba(10, 10, 10, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-subtle); border-radius: 100px;
             padding: 16px 40px; display: flex; justify-content: space-between; align-items: center;
-            transition: all 0.4s ease;
         }
 
         .logo {
-            font-size: 1.4rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+            font-size: 1.3rem; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase;
             background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
         .nav-status {
-            font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);
+            font-size: 0.8rem; font-weight: 600; color: var(--text-secondary);
             display: flex; align-items: center; gap: 8px; letter-spacing: 1px; text-transform: uppercase;
         }
         
         .status-dot {
-            width: 6px; height: 6px; background-color: #27c93f; border-radius: 50%;
-            box-shadow: 0 0 10px rgba(39, 201, 63, 0.5);
+            width: 6px; height: 6px; background-color: #27c93f; border-radius: 50%; box-shadow: 0 0 10px rgba(39, 201, 63, 0.5);
         }
 
-        /* --- HEADER / HERO SECTION --- */
+        /* --- HEADER / HERO SECTION (DIROMBAK TOTAL: TATA LETAK TERPUSAT & GRID DIGITAL) --- */
         header {
-            min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
-            padding: 0 5%; max-width: 1400px; margin: 0 auto; position: relative;
+            min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            padding: 0 5%; position: relative; text-align: center;
+            background: radial-gradient(circle at top, rgba(75, 35, 165, 0.15) 0%, var(--bg-base) 60%);
         }
 
-        .hero-content { max-width: 1000px; margin-top: 50px; }
+        /* Ornamen Jaring (Grid) Khas Platform Digital */
+        .bg-grid {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
+            -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
+        }
 
-        .hero-label {
-            font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 4px;
-            text-transform: uppercase; margin-bottom: 25px; display: block; border-left: 2px solid var(--text-secondary); padding-left: 15px;
+        .hero-content { position: relative; z-index: 2; max-width: 900px; margin-top: 60px; }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 8px 20px; border-radius: 50px; font-size: 0.8rem; font-weight: 700;
+            color: #D82A7C; background: rgba(216, 42, 124, 0.08); border: 1px solid rgba(216, 42, 124, 0.2);
+            letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px;
         }
 
         .hero-title {
-            font-size: clamp(3.5rem, 8vw, 7.5rem); font-weight: 900; line-height: 1.05;
-            letter-spacing: -0.03em; margin-bottom: 30px; color: var(--text-primary);
+            font-size: clamp(3rem, 6.5vw, 6rem); font-weight: 800; line-height: 1.1;
+            letter-spacing: -0.02em; margin-bottom: 25px; color: var(--text-primary);
         }
         
-        .hero-title span { color: var(--text-secondary); }
+        .hero-title span { background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         .hero-desc {
-            font-size: clamp(1rem, 2vw, 1.3rem); color: var(--text-secondary); max-width: 650px;
-            line-height: 1.8; font-weight: 300;
+            font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-secondary); max-width: 650px;
+            margin: 0 auto; line-height: 1.8; font-weight: 400;
         }
 
-        /* --- SHOWCASE / KATALOG MINIMALIS --- */
-        .showcase-section { padding: 100px 5% 150px; max-width: 1400px; margin: 0 auto; }
+        /* --- KATALOG PRODUK DIGITAL --- */
+        .showcase-section { padding: 80px 5% 150px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 5; }
         
-        .section-header { margin-bottom: 60px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px; }
-        .section-header h2 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
-        .section-header p { color: var(--text-secondary); font-size: 1rem; }
+        .section-header { text-align: center; margin-bottom: 70px; }
+        .section-header h2 { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; }
+        .section-header p { color: var(--text-secondary); font-size: 1.05rem; }
 
         .showcase-card {
             display: block; background: var(--bg-surface); border: 1px solid var(--border-subtle);
-            border-radius: 30px; padding: 60px; position: relative; overflow: hidden;
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer;
+            border-radius: 24px; padding: 50px; position: relative; overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; text-align: left;
         }
 
-        /* Lapisan Gradasi yang hanya muncul saat di-hover */
         .showcase-card::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--brand-gradient); opacity: 0; transition: opacity 0.6s ease; z-index: 1;
+            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+            opacity: 0; transition: opacity 0.5s ease; z-index: 1; pointer-events: none;
         }
 
-        .card-content { position: relative; z-index: 2; transition: transform 0.6s ease; }
+        /* Badge Status Produk (Update Monetlua) */
+        .product-status {
+            position: absolute; top: 40px; right: 50px; padding: 8px 18px; border-radius: 50px;
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+            background: rgba(255, 170, 0, 0.1); color: #ffaa00; border: 1px solid rgba(255, 170, 0, 0.2);
+            z-index: 3; transition: all 0.5s ease;
+        }
+
+        .card-content { position: relative; z-index: 2; transition: transform 0.5s ease; }
         
-        .card-icon { margin-bottom: 40px; }
-        .card-icon svg { width: 40px; height: 40px; stroke: var(--text-primary); transition: stroke 0.6s ease; }
+        .card-icon { margin-bottom: 35px; display: inline-block; padding: 15px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 16px; transition: all 0.5s ease; }
+        .card-icon svg { width: 32px; height: 32px; stroke: var(--text-primary); transition: stroke 0.5s ease; }
 
-        .card-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 20px; transition: color 0.6s ease; }
-        .card-desc { font-size: 1.15rem; color: var(--text-secondary); max-width: 700px; line-height: 1.7; font-weight: 300; transition: color 0.6s ease; }
+        .card-title { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 15px; }
+        .card-desc { font-size: 1.05rem; color: var(--text-secondary); max-width: 700px; line-height: 1.7; font-weight: 400; transition: color 0.5s ease; }
 
-        .card-arrow {
-            position: absolute; top: 60px; right: 60px; width: 50px; height: 50px;
-            border: 1px solid var(--border-subtle); border-radius: 50%;
-            display: flex; justify-content: center; align-items: center; z-index: 2;
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        .explore-link {
+            display: inline-flex; align-items: center; gap: 8px; margin-top: 30px;
+            font-size: 0.95rem; font-weight: 600; color: #D82A7C; transition: transform 0.3s ease;
         }
-        .card-arrow svg { width: 24px; height: 24px; stroke: var(--text-primary); transition: stroke 0.6s ease; }
+        .explore-link svg { width: 18px; height: 18px; }
 
-        /* Efek Hover Mewah */
-        .showcase-card:hover { transform: translateY(-10px); border-color: transparent; }
+        /* Interaksi Hover Kartu Digital */
+        .showcase-card:hover { transform: translateY(-8px); border-color: rgba(216, 42, 124, 0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
         .showcase-card:hover::before { opacity: 1; }
-        .showcase-card:hover .card-content { transform: translateX(20px); }
-        .showcase-card:hover .card-icon svg, .showcase-card:hover .card-title, .showcase-card:hover .card-desc, .showcase-card:hover .card-arrow svg { stroke: #ffffff; color: #ffffff; }
-        .showcase-card:hover .card-arrow { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); transform: rotate(-45deg) scale(1.1); }
+        .showcase-card:hover .product-status { opacity: 0.5; }
+        .showcase-card:hover .card-icon { background: var(--text-primary); border-color: var(--text-primary); }
+        .showcase-card:hover .card-icon svg { stroke: var(--bg-base); }
+        .showcase-card:hover .explore-link { transform: translateX(10px); }
 
-        /* --- FOOTER MINIMALIS --- */
+        /* --- FOOTER --- */
         footer {
-            padding: 60px 5%; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto;
+            padding: 50px 5%; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto;
         }
-
-        .footer-text { font-size: 0.9rem; color: var(--text-secondary); font-weight: 300; letter-spacing: 1px; }
+        .footer-text { font-size: 0.9rem; color: var(--text-secondary); font-weight: 400; letter-spacing: 0.5px; }
 
         .discord-btn {
-            display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;
-            border: 1px solid var(--border-subtle); border-radius: 50%; color: var(--text-primary);
+            display: flex; align-items: center; justify-content: center; width: 45px; height: 45px;
+            border: 1px solid var(--border-subtle); border-radius: 50%; color: var(--text-secondary);
             transition: all 0.4s ease; background: var(--bg-surface);
         }
-
-        .discord-btn svg { width: 22px; height: 22px; fill: currentColor; transition: transform 0.4s ease; }
-
+        .discord-btn svg { width: 20px; height: 20px; fill: currentColor; transition: transform 0.4s ease; }
         .discord-btn:hover { border-color: var(--text-primary); background: var(--text-primary); color: var(--bg-base); }
         .discord-btn:hover svg { transform: scale(1.1); }
 
-        /* Responsif */
         @media (max-width: 768px) {
-            nav { padding: 15px 25px; width: 95%; }
-            .nav-status { display: none; } /* Sembunyikan status di HP agar logo menonjol */
-            .showcase-card { padding: 40px 30px; }
-            .card-arrow { top: 40px; right: 30px; width: 40px; height: 40px; }
-            footer { flex-direction: column-reverse; gap: 30px; text-align: center; }
+            nav { padding: 15px 25px; width: 92%; }
+            .nav-status { display: none; } 
+            .hero-content { margin-top: 40px; }
+            .showcase-card { padding: 40px 25px; }
+            .product-status { top: 25px; right: 25px; padding: 6px 12px; font-size: 0.7rem; }
+            footer { flex-direction: column-reverse; gap: 25px; text-align: center; }
         }
     </style>
 </head>
@@ -166,64 +181,75 @@
         <a href="#" class="logo">Renxxno</a>
         <div class="nav-status">
             <span class="status-dot"></span>
-            Sistem Aktif
+            Layanan Optimal
         </div>
     </nav>
-        <!-- Header Utama (Tipografi Skala Besar) -->
+        <!-- Header Utama (Dirombak Total: Tata Letak Terpusat & Profesional) -->
     <header id="home">
+        <!-- Latar Belakang Garis Jaring Digital -->
+        <div class="bg-grid"></div>
+
         <div class="hero-content">
-            <span class="hero-label animate-reveal">Renxxno Store</span>
+            <div class="hero-badge animate-reveal">Platform Produk Digital</div>
             <h1 class="hero-title animate-reveal delay-1">
-                Presisi.<br>
-                <span>Performa.</span><br>
-                Eksklusif.
+                Katalog Aset Digital<br>
+                <span>Berkualitas Tinggi</span>
             </h1>
             <p class="hero-desc animate-reveal delay-2">
-                Menghadirkan standar baru dalam kustomisasi digital. Kami merancang arsitektur perangkat lunak yang berfokus pada stabilitas, kecepatan, dan estetika tanpa kompromi untuk klien GTA SAMP Anda.
+                Tingkatkan efisiensi dan pengalaman virtual Anda melalui koleksi produk digital eksklusif kami. Dirancang dengan presisi struktural dan dioptimalkan untuk memberikan performa maksimal pada sistem Anda.
             </p>
         </div>
     </header>
 
-    <!-- Pintu Masuk Katalog (Desain Kartu Showcase Mewah) -->
+    <!-- Pintu Masuk Katalog Digital -->
     <section class="showcase-section">
         <div class="section-header animate-reveal">
-            <h2>Katalog Produk</h2>
-            <p>Pilih arsitektur perangkat lunak Anda.</p>
+            <h2>Katalog Lisensi & Produk</h2>
+            <p>Jelajahi berbagai aset perangkat lunak yang kami tawarkan.</p>
         </div>
 
-        <!-- Kartu Utama Mengarah ke Halaman Monetloader -->
+        <!-- Kartu Produk Monetloader (Teks Disesuaikan & Status Diperbarui) -->
         <a href="monetloader.html" class="showcase-card animate-reveal delay-1">
-            <div class="card-arrow">
-                <!-- Ikon Panah Diagonal Minimalis -->
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </div>
+            
+            <!-- Label Status Pembaruan (Maintenance) -->
+            <div class="product-status">Sedang Diperbarui</div>
             
             <div class="card-content">
                 <div class="card-icon">
-                    <!-- Ikon Abstrak Geometris (Menggantikan Emotikon) -->
+                    <!-- Ikon Abstrak Digital -->
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                        <line x1="3" y1="9" x2="21" y2="9"></line>
-                        <line x1="9" y1="21" x2="9" y2="9"></line>
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
                     </svg>
                 </div>
-                <h3 class="card-title">Monetloader Lua</h3>
-                <p class="card-desc">Eksplorasi koleksi modul skrip tingkat lanjut. Dirancang dengan kode yang bersih untuk memaksimalkan efisiensi klien dan memberikan keunggulan teknis secara absolut.</p>
+                
+                <h3 class="card-title">Monetloader Lua Scripts</h3>
+                
+                <!-- Teks Disesuaikan dengan Konteks Penjualan Produk Digital -->
+                <p class="card-desc">
+                    Paket aset digital berupa skrip Lua tingkat lanjut dan modifikasi in-game. Lisensi premium untuk optimasi antarmuka, peningkatan sistem stabilitas, serta modul utilitas yang didesain secara spesifik untuk klien GTA SAMP.
+                </p>
+
+                <div class="explore-link">
+                    Tinjau Informasi Produk
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
             </div>
         </a>
     </section>
 
-    <!-- Footer Minimalis Terstruktur -->
+    <!-- Footer Interaktif & Minimalis -->
     <footer>
         <div class="footer-text">
-            &copy; 2026 Renxxno Store. Hak cipta dilindungi undang-undang.
+            &copy; 2026 Renxxno Store. Platform Distribusi Produk Digital.
         </div>
         
-        <!-- Tombol Discord Interaktif (Hanya Ikon Logo) -->
-        <a href="https://discord.gg/7nPYsS3y5" target="_blank" class="discord-btn" aria-label="Kunjungi Komunitas Discord">
+        <!-- Tautan Discord Tunggal (Hanya Logo Interaktif) -->
+        <a href="https://discord.gg/7nPYsS3y5" target="_blank" class="discord-btn" aria-label="Bergabung ke Komunitas Discord">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
             </svg>
@@ -232,3 +258,4 @@
 
 </body>
 </html>
+
