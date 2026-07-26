@@ -55,7 +55,7 @@
         .page-header h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -0.02em; }
         .page-header p { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; font-weight: 300; }
 
-        /* --- TAHAP INSTALASI (DESAIN BARU RAPI & PRESISI) --- */
+        /* --- TAHAP INSTALASI --- */
         .guide-section { padding: 40px 5% 80px; max-width: 1200px; margin: 0 auto; }
         .section-title { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 50px; letter-spacing: -0.02em; }
         
@@ -67,7 +67,6 @@
         }
         .step-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.15); }
         
-        /* Tata Letak Angka yang Presisi dan Estetik */
         .step-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
         .step-num-badge {
             width: 40px; height: 40px; border-radius: 12px;
@@ -140,7 +139,6 @@
         }
         .modal-overlay.active { display: flex; opacity: 1; }
 
-        /* Layout Modal Flexbox (Header Statis, Body Scroll, Footer Statis) */
         .modal-content {
             background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 30px;
             width: 100%; max-width: 500px; position: relative;
@@ -155,30 +153,25 @@
         
         .step-container { display: flex; flex-direction: column; height: 100%; overflow: hidden; }
         
-        /* Area yang bisa digulir (Scrollable Deskripsi) */
         .modal-body { flex-grow: 1; overflow-y: auto; padding-right: 15px; margin-right: -10px; margin-top: 10px; }
         .modal-body::-webkit-scrollbar { width: 4px; }
         .modal-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
 
-        /* Area Tetap (Fixed Header & Footer) */
         .modal-header { flex-shrink: 0; border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px; padding-right: 30px; }
         .modal-footer { flex-shrink: 0; border-top: 1px solid var(--border-subtle); padding-top: 25px; margin-top: 10px; }
 
-        /* Typography Modal */
         #m-title { font-size: 2rem; font-weight: 900; margin-bottom: 8px; line-height: 1.1; letter-spacing: -0.02em; }
         #m-price { font-size: 1.6rem; font-weight: 700; color: var(--text-primary); }
         
         .content-label { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; display: block; margin-top: 10px; }
         #m-desc { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; white-space: pre-line; font-weight: 300; }
         
-        /* Box Tutorial */
         .tutorial-box {
             background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle);
             border-radius: 16px; padding: 20px; margin-top: 5px; margin-bottom: 20px;
         }
         #m-tutorial { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; white-space: pre-line; font-weight: 300; }
         
-        /* Tombol Beli */
         .btn-action {
             width: 100%; padding: 18px; border-radius: 100px; font-weight: 600; font-size: 1.05rem;
             cursor: pointer; transition: all 0.4s ease; text-align: center; border: none; outline: none;
@@ -189,7 +182,6 @@
         .btn-outline { background: transparent; border: 1px solid var(--border-subtle); color: var(--text-primary); margin-top: 15px; }
         .btn-outline:hover { border-color: rgba(255,255,255,0.2); }
 
-        /* Payment Selection */
         .payment-box {
             display: flex; align-items: center; padding: 18px 20px; border: 1px solid var(--border-subtle);
             border-radius: 20px; margin-bottom: 15px; cursor: pointer; transition: 0.4s ease; background: transparent;
@@ -212,19 +204,16 @@
 </head>
 <body oncontextmenu="return false;">
 
-    <!-- Tombol Kembali Statis (Hanya ada di halaman Monetloader) -->
     <a href="index.html" class="btn-back">
         <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
         Kembali
     </a>
 
-    <!-- Header Halaman -->
     <header class="page-header animate-up">
         <h1>Monetloader Setup</h1>
         <p>Arsitektur skrip Lua eksklusif dengan performa tingkat tinggi. Dirancang khusus untuk mengoptimalkan presisi dan gaya bermain Anda secara profesional.</p>
     </header>
 
-    <!-- Tahap Instalasi -->
     <section class="guide-section animate-up delay-1">
         <h2 class="section-title">Tahap Instalasi</h2>
         <div class="steps-container">
@@ -251,85 +240,73 @@
             </div>
         </div>
     </section>
-        <!-- Katalog Produk Lua Terfokus (PERBAIKAN BUG KLIK) -->
+        <!-- Katalog Produk Lua (Terintegrasi Deskripsi dan Tutorial dari Source Code) -->
     <section class="products-section animate-up delay-2">
         <div class="grid">
             
-            <!-- Produk 1 -->
-            <div class="product-card" onclick="openProduct('Teleport Menu', 'Rp 38.000', 'Cheats Module', 'FITUR UTAMA:\n• Teleport Market & Checkpoint otomatis.\n• UI Menu Minimalis & interaktif.\n• Notifikasi proses di layar.\n• Sangat ringan, 0% FPS drop.\n\nINFO PENTING:\nSupport semua jenis Server SAMP dan Client. Sistem Anti-Ban 95% aman digunakan.', '[Command : /Tpmenu]\nLalu tandai di Map lokasi yang ingin dikunjungi. Setelah selesai menandai, klik Marker.\n\nSebaliknya, jika ingin menggunakan Checkpoint (pada Misi atau GPS), klik opsi Checkpoint. Jangan bergerak hingga muncul notifikasi Teleport Berhasil di chat.')">
+            <!-- Produk 1: Teleport Menu -->
+            <div class="product-card" onclick="openProduct('Teleport Menu', 'Rp 38.000', 'Cheats Module', 'FITUR UTAMA:\n• Teleport ke Market & Checkpoint secara presisi.\n• Dilengkapi UI Menu Mimgui yang elegan dan anti-lag.\n• Notifikasi sukses/gagal langsung ditampilkan di layar (chatlog).\n\nINFO PENTING:\nSkrip ini telah dioptimalkan untuk meminimalisasi deteksi. Support digunakan di hampir seluruh jenis Server SAMP dan Client.', '• Langkah 1: Buka In-Game chat lalu ketik command: /tpmenu\n• Langkah 2: Buka peta (Map) dan berikan tanda (Marker) pada lokasi yang ingin dituju.\n• Langkah 3: Buka kembali UI Teleport dan tekan tombol Marker.\n• Langkah 4: Untuk misi, cukup aktifkan opsi Checkpoint.\n\n*Catatan: Jangan bergerak hingga muncul pesan \'Teleport Berhasil\' pada chatlog.')">
                 <span class="category-tag">Cheats Module</span>
                 <h3>Teleport Menu</h3>
-                <p>Tampilan UI minimalis dengan dukungan teleportasi akurat. Support all server, anti-ban 95%.</p>
+                <p>Tampilan UI minimalis dengan dukungan teleportasi akurat ke marker maupun checkpoint misi.</p>
                 <div class="card-bottom">
                     <span class="price">Rp 38.000</span>
-                    <div class="buy-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
+                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
                 </div>
             </div>
 
-            <!-- Produk 2 -->
-            <div class="product-card" onclick="openProduct('FPS Optimizer', 'Rp 15.000', 'Performance', 'FITUR UTAMA:\n• Pembersihan streaming memory otomatis.\n• Bypass game crash di area padat (mapping berat).\n• Menstabilkan FPS di keramaian player.\n\nINFO PENTING:\n100% Aman, tidak terdeteksi sebagai cheat. Esensial bagi perangkat yang membutuhkan optimasi ekstra.', '[Isi panduan pengaturan memori dan penyesuaian limit FPS untuk skrip ini akan dicantumkan di sini.]')">
+            <!-- Produk 2: FPS Optimizer Menu -->
+            <div class="product-card" onclick="openProduct('FPS Optimizer', 'Rp 15.000', 'Performance', 'FITUR UTAMA:\n• Pembersihan Cache Memory (RAM) otomatis.\n• Sistem Limiter FPS yang dapat diatur via Slider (Max 240).\n• Fitur ekstrim \'Black Sky\' (Menghitamkan langit total) & \'Low Mode\' (Mengunci waktu ke siang hari) untuk menghindari rendering awan.\n• Indikator FPS kustom yang ringan.\n\nINFO PENTING:\nSolusi absolut untuk mencegah Stuttering dan Warning Opcode di area padat player/mapping.', '• Langkah 1: Ketik command: /fpsmenu di in-game.\n• Langkah 2 (Anti-Lag): Buka tab \'Sistem & Limit\', centang opsi \'Auto-Clear Cache\'. Ini akan membersihkan memori setiap 5 detik secara background.\n• Langkah 3 (Visual): Buka tab \'Mode & Visual\', pilih Mode Low Banget atau aktifkan Langit Hitam jika dirasa rendering mapping server terlalu berat.')">
                 <span class="category-tag">Performance</span>
                 <h3>FPS Optimizer</h3>
-                <p>Membersihkan streaming memory secara otomatis untuk mencegah crash di area padat.</p>
+                <p>Meningkatkan performa FPS dengan fitur Auto Clear RAM, Black Sky, FPS Indicator, dan Limiter.</p>
                 <div class="card-bottom">
                     <span class="price">Rp 15.000</span>
-                    <div class="buy-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
+                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
                 </div>
             </div>
 
-            <!-- Produk 3 -->
-            <div class="product-card" onclick="openProduct('Vehicle Teleport', 'Rp 18.000', 'Cheats Module', 'FITUR UTAMA:\n• Tarik semua jenis kendaraan dalam radius tertentu.\n• Fitur masuk ke kendaraan secara instan tanpa animasi.\n• Anti-Lag & Anti-Ban server-side.\n\nINFO PENTING:\nSangat membantu efisiensi waktu saat Roleplay berjalan intensif.', '[Isi instruksi mengenai limitasi jarak penarikan kendaraan dan daftar perintah akan dicantumkan di sini.]')">
+            <!-- Produk 3: Vehicle Teleport (Get Vehicle / GV Menu) -->
+            <div class="product-card" onclick="openProduct('Vehicle Teleport', 'Rp 18.000', 'Cheats Module', 'FITUR UTAMA:\n• Mendeteksi seluruh ID dan Nama model kendaraan yang ada di sekitar player (Radar System).\n• Menarik (Warp) kendaraan ke lokasi player secara instan.\n• Fitur Masuk ke kendaraan dari jarak jauh tanpa animasi berjalan.\n• Menyimpan 5 riwayat (History) ID kendaraan terakhir yang dieksekusi.\n\nINFO PENTING:\nUI Mimgui dirancang responsif. Jika target terlalu jauh (di luar stream), skrip akan memberikan indikator error.', '• Langkah 1: Ketik command: /gvmenu\n• Langkah 2: Buka tab \'Radar Kendaraan Terdekat\'.\n• Langkah 3: Klik salah satu nama kendaraan di daftar radar. ID kendaraan akan otomatis terisi ke dalam kotak input.\n• Langkah 4: Klik tombol \'Tarik Kendaraan\' untuk membawa mobil ke arahmu, atau \'Teleport & Masuk\' untuk langsung berada di kursi kemudi.')">
                 <span class="category-tag">Cheats Module</span>
                 <h3>Vehicle Teleport</h3>
-                <p>Sistem penarikan kendaraan instan. Efisiensi tinggi dengan perlindungan anti-ban terbaik.</p>
+                <p>Radar scan kendaraan sekitar, tarik instan, atau masuk ke bangku kemudi tanpa animasi berjalan.</p>
                 <div class="card-bottom">
                     <span class="price">Rp 18.000</span>
-                    <div class="buy-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
+                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
                 </div>
             </div>
 
-            <!-- Produk 4 -->
-            <div class="product-card" onclick="openProduct('Maphack ESP', 'Rp 28.000', 'Visual Enhancement', 'FITUR UTAMA:\n• ESP NameTag Jarak Jauh.\n• ESP Health & Armor Bar.\n• ESP Line (Garis penunjuk player).\n• Radar Map kustom.\n• ESP Weapon (Mengetahui senjata musuh).\n\nINFO PENTING:\nKeunggulan taktikal penuh untuk perang atau kompetitif. Render distance dapat diatur via in-game.', '[Isi panduan pengaktifan toggle ESP dan cara membaca radar akan dicantumkan di sini.]')">
+            <!-- Produk 4: Maphack ESP Menu -->
+            <div class="product-card" onclick="openProduct('Maphack ESP Menu', 'Rp 28.000', 'Visual Enhancement', 'FITUR UTAMA:\n• Player ESP: Menampilkan Box 2D, Garis presisi, Nama, ID, Status HP/Armor aktual, Jarak, hingga Senjata yang sedang dipegang target.\n• World ESP: Integrasi posisi target langsung ke Minimap Radar.\n• Objek ESP: Mendeteksi keberadaan kendaraan, jaraknya, dan Pickup Loot di area sekitar.\n• Indikator Warna Cerdas: Hijau (Jauh), Kuning (Awas), Merah (< 20 meter).\n\nINFO PENTING:\nBerfungsi sangat mulus dengan render 3D-to-Screen conversion. Esensial untuk skenario pertempuran.', '• Langkah 1: Ketik command: /maphack\n• Langkah 2: Pilih tab \'Player ESP\' untuk mengaktifkan berbagai indikator musuh. (Sangat disarankan mencentang HP, Nama, dan Garis).\n• Langkah 3: Pilih tab \'World ESP\' lalu centang \'Maphack Minimap\' agar titik musuh (blip) selalu muncul di radar bundar ujung layar.')">
                 <span class="category-tag">Visual Enhancement</span>
                 <h3>Maphack ESP Menu</h3>
-                <p>Sistem ESP lengkap (Name, Health, Armor, Weapon, Line). Jarak pandang maksimal.</p>
+                <p>Sistem visual taktis lengkap. Menampilkan Box, HP/Armor, Nama, Jarak, Senjata, hingga Maphack Radar.</p>
                 <div class="card-bottom">
                     <span class="price">Rp 28.000</span>
-                    <div class="buy-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
+                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
                 </div>
             </div>
 
-            <!-- Produk 5 -->
-            <div class="product-card" onclick="openProduct('Instant Repair', 'Rp 38.000', 'Mechanic Module', 'FITUR UTAMA:\n• Fix visual bodi mobil rusak seketika.\n• Manipulasi health kendaraan (Bisa diisi sesuai keinginan).\n• Fix secara server-side (Bukan sekadar visual lokal).\n\nINFO PENTING:\nDilengkapi perlindungan Anti-Detect dari sistem pengawasan server.', '[Isi tutorial integrasi perbaikan kendaraan dengan status mekanik akan dicantumkan di sini.]')">
+            <!-- Produk 5: Repair Menu (Instant Repair) -->
+            <div class="product-card" onclick="openProduct('Instant Repair', 'Rp 38.000', 'Mechanic Module', 'FITUR UTAMA:\n• Mengisi Health (HP) kendaraan secara spesifik melalui input angka kustom.\n• Memperbaiki visual mesin (asap/api) dan panel bodi yang rusak seketika.\n• Sistem Sinkronisasi Bypass: Memberikan perintah jaringan (RakNet Fake Sync) agar perbaikan tervalidasi secara server-side.\n\nINFO PENTING:\nDengan fitur Toggle Bypass, sistem deteksi curang server dapat dimanipulasi dengan efektif.', '• Langkah 1: Kamu wajib sedang mengemudi/berada di dalam kendaraan.\n• Langkah 2: Ketik command: /repairmenu\n• Langkah 3: Pada bagian atas, ketik jumlah HP kendaraan (Maksimal normal adalah 1000).\n• Langkah 4: Jika server memiliki anti-cheat ketat, klik tombol \'Status Bypass\' menjadi ON sebelum menekan tombol Terapkan Darah.')">
                 <span class="category-tag">Mechanic Module</span>
                 <h3>Instant Repair Menu</h3>
-                <p>Perbaikan kendaraan total secara server-side. Hilangkan kerusakan visual dan mesin.</p>
+                <p>Modifikasi status HP kendaraan secara spesifik dan perbaikan visual bodi dengan perlindungan Anti-Cheat Bypass.</p>
                 <div class="card-bottom">
                     <span class="price">Rp 38.000</span>
-                    <div class="buy-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
+                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
                 </div>
             </div>
 
-            <!-- Produk 6 -->
-            <div class="product-card" onclick="openProduct('Custom Engineering', 'Mulai Rp 10.000', 'Engineering', 'JASA PROGRAMMING CUSTOM LUA\n\nPunya alur sistem skrip sendiri? Kami siap mewujudkannya untuk Anda.\n\nKETENTUAN:\n• Harga awal penawaran Rp 10.000 (Menyesuaikan tingkat kerumitan arsitektur).\n• Clean code, dijamin ringan saat dieksekusi oleh mesin Monetloader.\n• Garansi perbaikan jika ditemukan galat (bug).', '[Isi alur pemesanan, pengiriman spesifikasi fitur, dan panduan klaim garansi akan dicantumkan di sini.]')">
+            <!-- Produk 6: Request Custom Lua -->
+            <div class="product-card" onclick="openProduct('Custom Engineering', 'Mulai Rp 10.000', 'Engineering', 'JASA PROGRAMMING CUSTOM LUA\n\nPunya alur sistem skrip sendiri? Kami siap mewujudkannya untuk Anda.\n\nKETENTUAN:\n• Harga awal penawaran Rp 10.000 (Menyesuaikan tingkat kerumitan arsitektur algoritma).\n• Clean code, dijamin ringan saat dieksekusi oleh library Mimgui.\n• Garansi perbaikan penuh jika ditemukan galat (bug) pada modul.', 'Prosedur Pemesanan:\n1. Siapkan catatan detail mengenai ide skrip (Nama command, desain menu, dan fungsi inti).\n2. Klik Lanjutkan Pembayaran di bawah ini.\n3. Anda akan diarahkan ke WhatsApp, silakan lampirkan konsep tersebut di dalam chat.\n4. Kami akan mengevaluasi dan memberikan estimasi waktu pengerjaan.')">
                 <span class="category-tag">Engineering</span>
                 <h3>Request Custom Lua</h3>
-                <p>Konsultasikan ide arsitektur skrip Anda. Dibuat dengan presisi tinggi dan kode yang bersih.</p>
+                <p>Konsultasikan ide arsitektur skrip Anda. Dibuat dengan presisi tinggi menggunakan library Mimgui terkini.</p>
                 <div class="card-bottom">
-                    <span class="price">Rp 10.000-</span>
-                    <div class="buy-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
+                    <span class="price">10K+</span>
+                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
                 </div>
             </div>
 
@@ -347,14 +324,12 @@
             
             <!-- STEP 1: DETAIL PRODUK -->
             <div id="step-1" class="step-container">
-                <!-- Header Statis -->
                 <div class="modal-header">
                     <span class="category-tag" id="m-tag" style="font-size:0.75rem; margin-bottom: 8px;">Kategori</span>
                     <h2 id="m-title">Title</h2>
                     <div id="m-price">Rp 0</div>
                 </div>
 
-                <!-- Body (Scrollable) -->
                 <div class="modal-body">
                     <span class="content-label">Informasi Skrip</span>
                     <p id="m-desc">Desc</p>
@@ -365,7 +340,6 @@
                     </div>
                 </div>
 
-                <!-- Footer Statis -->
                 <div class="modal-footer">
                     <button class="btn-action btn-buy" onclick="goToPayment()">Lanjutkan ke Pembayaran</button>
                 </div>
@@ -373,13 +347,11 @@
 
             <!-- STEP 2: PEMBAYARAN -->
             <div id="step-2" class="step-container" style="display: none;">
-                <!-- Header Statis -->
                 <div class="modal-header">
-                    <h2 id="m-title" style="margin-bottom: 5px; font-size: 1.8rem; font-weight: 900;">Pilih Metode</h2>
+                    <h2 id="m-title-pay" style="margin-bottom: 5px; font-size: 1.8rem; font-weight: 900;">Pilih Metode</h2>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; font-weight: 300;">Transaksi diintegrasikan otomatis melalui WhatsApp.</p>
                 </div>
 
-                <!-- Body (Scrollable) -->
                 <div class="modal-body" style="padding-top: 10px;">
                     <label style="display:block;">
                         <input type="radio" name="payment_method" value="QRIS" class="pay-input" checked>
@@ -397,7 +369,6 @@
                     </label>
                 </div>
 
-                <!-- Footer Statis -->
                 <div class="modal-footer">
                     <button class="btn-action btn-buy" onclick="processCheckout()">Checkout via WhatsApp</button>
                     <button class="btn-action btn-outline" onclick="backToDetail()">Kembali ke Detail</button>
@@ -465,3 +436,4 @@
     </script>
 </body>
 </html>
+
