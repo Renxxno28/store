@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monetloader Lua Scripts | Renxxno Store</title>
     
-    <!-- Font modern 'Outfit' -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
     <style>
@@ -19,18 +18,16 @@
             --brand-gradient: linear-gradient(135deg, #4B23A5 0%, #9B2CA3 50%, #D82A7C 100%);
         }
 
-        /* Reset & Keamanan */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; -webkit-tap-highlight-color: transparent; outline: none !important; }
         body { background-color: var(--bg-base); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
         a, img { -webkit-user-drag: none; user-drag: none; text-decoration: none; }
 
-        /* --- ANIMASI MINIMALIS --- */
         @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .animate-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
 
-        /* --- TOMBOL KEMBALI (FLOATING BACK BUTTON) --- */
+        /* --- TOMBOL KEMBALI (FLOATING) --- */
         .btn-back {
             position: fixed; top: 30px; left: 5%; z-index: 100;
             display: inline-flex; align-items: center; gap: 10px;
@@ -40,13 +37,10 @@
             color: var(--text-secondary); font-size: 0.95rem; font-weight: 500;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .btn-back:hover {
-            color: var(--text-primary); border-color: rgba(255,255,255,0.2);
-            transform: translateX(-5px);
-        }
+        .btn-back:hover { color: var(--text-primary); border-color: rgba(255,255,255,0.2); transform: translateX(-5px); }
         .btn-back svg { width: 18px; height: 18px; fill: currentColor; }
 
-        /* --- HEADER HALAMAN --- */
+        /* --- HEADER --- */
         .page-header { padding: 150px 5% 60px; text-align: center; position: relative; max-width: 1000px; margin: 0 auto; }
         .page-header::before {
             content: ''; position: absolute; width: 40vw; height: 40vw; max-width: 600px; max-height: 600px;
@@ -58,7 +52,6 @@
         /* --- TAHAP INSTALASI --- */
         .guide-section { padding: 40px 5% 80px; max-width: 1200px; margin: 0 auto; }
         .section-title { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 50px; letter-spacing: -0.02em; }
-        
         .steps-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         
         .step-card {
@@ -69,68 +62,185 @@
         
         .step-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
         .step-num-badge {
-            width: 40px; height: 40px; border-radius: 12px;
-            background: rgba(255,255,255,0.05); color: var(--text-primary);
-            display: flex; justify-content: center; align-items: center;
-            font-size: 1.2rem; font-weight: 800; flex-shrink: 0;
-            border: 1px solid var(--border-subtle);
+            width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.05); color: var(--text-primary);
+            display: flex; justify-content: center; align-items: center; font-size: 1.2rem; font-weight: 800; flex-shrink: 0; border: 1px solid var(--border-subtle);
         }
         .step-card h3 { font-size: 1.3rem; margin: 0; color: var(--text-primary); font-weight: 700; }
         .step-card p { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; font-weight: 300; }
 
-        /* --- KATALOG PRODUK --- */
+        /* --- KATALOG PRODUK GRID --- */
         .products-section { padding: 60px 5% 100px; max-width: 1400px; margin: 0 auto; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 
         .product-card {
-            background: var(--bg-surface); border: 1px solid var(--border-subtle);
-            border-radius: 30px; padding: 40px 35px; display: flex; flex-direction: column;
-            cursor: pointer; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden;
+            background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 30px; padding: 40px 35px; 
+            display: flex; flex-direction: column; cursor: pointer; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden;
         }
-        
         .product-card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--brand-gradient); opacity: 0; transition: opacity 0.5s ease; z-index: 1;
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--brand-gradient); opacity: 0; transition: opacity 0.5s ease; z-index: 1;
         }
-
         .product-card > * { position: relative; z-index: 2; transition: transform 0.5s ease; }
-
         .product-card:hover { transform: translateY(-10px); border-color: transparent; }
         .product-card:hover::before { opacity: 1; }
         .product-card:hover > * { transform: translateX(10px); }
 
-        .category-tag {
-            color: var(--text-secondary); font-size: 0.8rem; font-weight: 600; letter-spacing: 2px;
-            text-transform: uppercase; margin-bottom: 20px; display: block; transition: color 0.5s ease;
-        }
-        
+        .category-tag { color: var(--text-secondary); font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; display: block; transition: color 0.5s ease; }
         .product-card h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; line-height: 1.2; letter-spacing: -0.02em; transition: color 0.5s ease; }
         .product-card p { color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 40px; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-weight: 300; transition: color 0.5s ease; }
         
         .card-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
         .price { font-size: 1.6rem; font-weight: 800; color: var(--text-primary); transition: color 0.5s ease; }
-        
-        .buy-icon {
-            width: 45px; height: 45px; border-radius: 50%; border: 1px solid var(--border-subtle);
-            display: flex; justify-content: center; align-items: center; color: var(--text-primary);
-            transition: all 0.5s ease;
-        }
-        
+        .buy-icon { width: 45px; height: 45px; border-radius: 50%; border: 1px solid var(--border-subtle); display: flex; justify-content: center; align-items: center; color: var(--text-primary); transition: all 0.5s ease; }
         .product-card:hover .category-tag, .product-card:hover h3, .product-card:hover p, .product-card:hover .price { color: #ffffff; }
         .product-card:hover .buy-icon { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); transform: rotate(-45deg); stroke: #ffffff; }
 
-        /* --- FOOTER --- */
         footer { text-align: center; padding: 50px 5%; border-top: 1px solid var(--border-subtle); color: var(--text-secondary); font-size: 0.9rem; font-weight: 300; }
 
-        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             .btn-back { top: 20px; left: 20px; padding: 10px 18px; }
             .page-header { padding-top: 120px; }
             .step-card { padding: 25px; }
             .product-card { padding: 30px; }
         }
+    </style>
+</head>
+<body oncontextmenu="return false;">
 
-        /* ================= MODAL / POPUP CHECKOUT BERSTRUKTUR STATIS ================= */
+    <a href="index.html" class="btn-back">
+        <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        Kembali
+    </a>
+
+    <header class="page-header animate-up">
+        <h1>Monetloader Setup</h1>
+        <p>Arsitektur skrip Lua eksklusif dengan performa tingkat tinggi. Dirancang khusus untuk mengoptimalkan presisi dan gaya bermain Anda secara profesional.</p>
+    </header>
+
+    <section class="guide-section animate-up delay-1">
+        <h2 class="section-title">Tahap Instalasi</h2>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-num-badge">1</div>
+                    <h3>Persiapan Direktori</h3>
+                </div>
+                <p>Pastikan Anda telah memasang struktur Monetloader versi terbaru pada klien GTA SAMP di perangkat Anda sebelum menginisiasi skrip.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-num-badge">2</div>
+                    <h3>Pemasangan Modul</h3>
+                </div>
+                <p>Ekstrak dan pindahkan berkas berformat <code>.lua</code> yang telah didapatkan ke dalam direktori <b>monetloader</b> pada folder root permainan Anda.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-num-badge">3</div>
+                    <h3>In-Game Konfigurasi</h3>
+                </div>
+                <p>Jalankan klien permainan. Skrip akan terinisiasi secara otomatis. Gunakan perintah chat khusus untuk mengakses antarmuka konfigurasi penuh.</p>
+            </div>
+        </div>
+    </section>
+        <section class="products-section animate-up delay-2">
+        <div class="grid">
+            
+            <!-- Produk 1 -->
+            <div class="product-card" onclick="openProduct('Teleport Menu', 'Rp 38.000', 'Cheats Module', 'FITUR UTAMA:\n• Teleport ke Marker Map & Checkpoint Misi.\n• Bypass Anti-Cheat (Kalkulasi OnFoot & InCar otomatis).\n• Pengaturan Speed, Sleep, dan Render Bar Info di layar.\n• Aman dari sistem deteksi Airbreak server ketat.', 'CARA PENGGUNAAN:\n1. Ketik /tpmenu di chat in-game.\n2. Buka Map, letakkan Marker di lokasi tujuan.\n3. Pilih \'Teleport To Marker\' di menu.\n4. Jangan bergerak atau menekan tombol apapun selama persentase teleport berjalan agar sinkronisasi bypass berhasil.')">
+                <span class="category-tag">Cheats Module</span>
+                <h3>Teleport Menu</h3>
+                <p>Sistem teleportasi akurat ke marker dan checkpoint misi dengan bypass deteksi Airbreak server-side.</p>
+                <div class="card-bottom">
+                    <span class="price">Rp 38.000</span>
+                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                </div>
+            </div>
+
+            <!-- Produk 2 (BARU) -->
+            <div class="product-card" onclick="openProduct('Armor & Health Spawn', 'Rp 38.000', 'Cheats Module', 'FITUR UTAMA:\n• Pengisian HP & Armor secara Instan atau Perlahan (Gradual).\n• Penghapusan HP & Armor seketika (Set HP ke 10, Armor ke 0).\n• AC Bypass V5: Memanipulasi paket sinkronisasi server agar tidak terdeteksi anti-cheat saat proses healing.', 'CARA PENGGUNAAN:\n1. Ketik /hbmenu di chat in-game.\n2. Pilih tab \'Tab Health\' atau \'Tab Armor\'.\n3. Gunakan \'Perlahan\' untuk pengisian aman yang meniru regenerasi normal, atau \'Instan\' untuk penuh seketika.\n4. Tekan \'Berhenti\' untuk membatalkan pengisian yang sedang berjalan.')">
+                <span class="category-tag">Cheats Module</span>
+                <h3>Armor & Health Spawn</h3>
+                <p>Sistem regenerasi HP dan Armor presisi dengan metode bypass sinkronisasi real-time Anti-Cheat V5.</p>
+                <div class="card-bottom">
+                    <span class="price">Rp 38.000</span>
+                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                </div>
+            </div>
+
+            <!-- Produk 3 (BARU) -->
+            <div class="product-card" onclick="openProduct('Cheat Menu', 'Rp 28.000', 'Cheats Module', 'FITUR UTAMA:\n• AirBrake (Terbang menembus seluruh objek map).\n• God Mode (Kebal peluru & HP terkunci di angka 100).\n• Anti Stun & Tidak Jatuh (No Fall animation clear).\n• Maraton (Lari tanpa lelah) & Speed Hack dengan Multiplier Slider.', 'CARA PENGGUNAAN:\n1. Ketik /cheatmenu di chat in-game.\n2. Centang fitur yang ingin digunakan pada kolom menu.\n3. Untuk mengaktifkan Speed Hack, geser slider multiplier untuk mengatur kecepatan laju karakter.\n4. Untuk Airbrake, Anda juga dapat tap 2x (double-tap) pada widget Player Info di layar untuk aktivasi on/off yang cepat.')">
+                <span class="category-tag">Cheats Module</span>
+                <h3>Cheat Menu</h3>
+                <p>Modul multifungsi mencakup AirBrake, God Mode, Anti Stun, No Fall, Maraton, hingga Speed Hack.</p>
+                <div class="card-bottom">
+                    <span class="price">Rp 28.000</span>
+                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                </div>
+            </div>
+
+            <!-- Produk 4 -->
+            <div class="product-card" onclick="openProduct('FPS Optimizer', 'Rp 15.000', 'Performance', 'FITUR UTAMA:\n• Auto-Clear Cache/RAM setiap 5 detik secara background.\n• Mode \'Black Sky\' (Langit polos) & \'Low Mode\' (Kunci waktu siang/cerah).\n• FPS Limiter (Hingga 240 FPS) & Indikator FPS Overlay.\n• Sangat ringan dan 100% aman (tidak terdeteksi sebagai cheat).', 'CARA PENGGUNAAN:\n1. Ketik /fpsmenu di chat in-game.\n2. Di tab \'Mode & Visual\', pilih Mode Low atau aktifkan Black Sky jika device mengalami render mapping berat.\n3. Di tab \'Sistem & Limit\', centang \'Auto-Clear Cache\' untuk menghilangkan lag/patah-patah (stuttering) saat berada di keramaian player.')">
+                <span class="category-tag">Performance</span>
+                <h3>FPS Optimizer</h3>
+                <p>Mengatasi memory leak dengan Auto-Clear RAM dan manipulasi render visual (Black Sky & Low Mode).</p>
+                <div class="card-bottom">
+                    <span class="price">Rp 15.000</span>
+                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                </div>
+            </div>
+
+            <!-- Produk 5 -->
+            <div class="product-card" onclick="openProduct('Vehicle Teleport', 'Rp 18.000', 'Cheats Module', 'FITUR UTAMA:\n• Radar Scanner: Mendeteksi ID, Nama, dan Jarak kendaraan di sekitar.\n• Tarik kendaraan (Warp) ke titik koordinat player.\n• Teleport dan langsung duduk di kursi kemudi tanpa animasi berjalan.\n• Menyimpan riwayat (History) 5 ID kendaraan terakhir.', 'CARA PENGGUNAAN:\n1. Ketik /gvmenu di chat in-game.\n2. Buka tab \'Radar Kendaraan Terdekat\', lalu klik nama kendaraan yang muncul untuk mengisi ID otomatis ke dalam kolom.\n3. Klik \'Tarik Kendaraan\' untuk membawa mobil mendekat, atau \'Teleport & Masuk\' untuk langsung mengemudikannya.')">
+                <span class="category-tag">Cheats Module</span>
+                <h3>Vehicle Teleport</h3>
+                <p>Sistem radar penarikan kendaraan jarak jauh dan teleportasi kemudi tanpa animasi interaksi.</p>
+                <div class="card-bottom">
+                    <span class="price">Rp 18.000</span>
+                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                </div>
+            </div>
+
+            <!-- Produk 6 -->
+            <div class="product-card" onclick="openProduct('Maphack ESP Menu', 'Rp 28.000', 'Visual Enhancement', 'FITUR UTAMA:\n• Player ESP: Garis penunjuk, Kotak 2D, Nama, HP/Armor Aktual, Senjata, dan Jarak.\n• Indikator Warna Dinamis: Berubah (Hijau, Kuning, Merah) berdasarkan jarak ancaman.\n• World ESP: Deteksi Kendaraan, Pickup Loot, dan integrasi blip musuh ke Minimap Radar asli GTA.', 'CARA PENGGUNAAN:\n1. Ketik /maphack di chat in-game.\n2. Buka tab \'Player ESP\' untuk mengaktifkan lapisan visual target (Kotak, Garis, dan Bar HP).\n3. Buka tab \'World ESP\' dan centang \'Maphack Minimap\' agar posisi musuh dapat dipantau dari radar bundar di sudut layar.')">
+                <span class="category-tag">Visual Enhancement</span>
+                <h3>Maphack ESP Menu</h3>
+                <p>Sistem visual taktis lengkap. Menampilkan Box 2D, Bar HP, Senjata target, hingga integrasi Maphack Radar.</p>
+                <div class="card-bottom">
+                    <span class="price">Rp 28.000</span>
+                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                </div>
+            </div>
+
+            <!-- Produk 7 -->
+            <div class="product-card" onclick="openProduct('Instant Repair Menu', 'Rp 38.000', 'Mechanic Module', 'FITUR UTAMA:\n• Memperbaiki kerusakan visual (bodi penyok/asap) secara instan.\n• Mengatur modifikasi jumlah HP kendaraan sesuai keinginan user.\n• Dilengkapi tombol Toggle Bypass Anti-Cheat jaringan server-side (RakNet Fake Sync).', 'CARA PENGGUNAAN:\n1. Masuk ke dalam kendaraan yang ingin dieksekusi.\n2. Ketik /repairmenu di chat in-game.\n3. Jika bermain di server ketat, aktifkan \'Status Bypass: ON\' terlebih dahulu agar fake sync berjalan.\n4. Masukkan angka nominal HP (maksimal normal adalah 1000) lalu klik \'Terapkan Darah Kendaraan\'.')">
+                <span class="category-tag">Mechanic Module</span>
+                <h3>Instant Repair Menu</h3>
+                <p>Modifikasi status HP kendaraan spesifik dan perbaikan visual bodi dengan perlindungan bypass sinkronisasi.</p>
+                <div class="card-bottom">
+                    <span class="price">Rp 38.000</span>
+                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                </div>
+            </div>
+
+            <!-- Produk 8 -->
+            <div class="product-card" onclick="openProduct('Request Custom Lua', 'Mulai Rp 10.000', 'Engineering', 'FITUR UTAMA:\n• Pembuatan skrip sesuai dengan alur sistem algoritma yang Anda minta.\n• Source code yang bersih (clean code) dengan performa UI ringan berbasis Mimgui.\n• Garansi perbaikan penuh jika ditemukan kegagalan fungsi (bug).', 'CARA PENGGUNAAN:\n1. Siapkan catatan konsep skrip Anda (Nama command, fungsi logika, dan kebutuhan menu UI).\n2. Klik tombol \'Lanjutkan ke Pembayaran\' di bawah menu ini.\n3. Kirimkan pesan berisi spesifikasi konsep tersebut melalui WhatsApp kami untuk evaluasi estimasi harga dan pengerjaan.')">
+                <span class="category-tag">Engineering</span>
+                <h3>Request Custom Lua</h3>
+                <p>Konsultasikan ide arsitektur skrip Anda. Kami akan mewujudkannya dengan presisi tinggi dan kode yang efisien.</p>
+                <div class="card-bottom">
+                    <span class="price">10K+</span>
+                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Renxxno Store. Hak cipta dilindungi undang-undang.</p>
+    </footer>
+        <!-- ================= CSS MODAL / POPUP CHECKOUT BERSTRUKTUR STATIS ================= -->
+    <style>
         .modal-overlay {
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
             background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
@@ -201,128 +311,12 @@
             #m-title { font-size: 1.6rem; }
         }
     </style>
-</head>
-<body oncontextmenu="return false;">
 
-    <a href="index.html" class="btn-back">
-        <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
-        Kembali
-    </a>
-
-    <header class="page-header animate-up">
-        <h1>Monetloader Setup</h1>
-        <p>Arsitektur skrip Lua eksklusif dengan performa tingkat tinggi. Dirancang khusus untuk mengoptimalkan presisi dan gaya bermain Anda secara profesional.</p>
-    </header>
-
-    <section class="guide-section animate-up delay-1">
-        <h2 class="section-title">Tahap Instalasi</h2>
-        <div class="steps-container">
-            <div class="step-card">
-                <div class="step-header">
-                    <div class="step-num-badge">1</div>
-                    <h3>Persiapan Direktori</h3>
-                </div>
-                <p>Pastikan Anda telah memasang struktur Monetloader versi terbaru pada klien GTA SAMP di perangkat Anda sebelum menginisiasi skrip.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-header">
-                    <div class="step-num-badge">2</div>
-                    <h3>Pemasangan Modul</h3>
-                </div>
-                <p>Ekstrak dan pindahkan berkas berformat <code>.lua</code> yang telah didapatkan ke dalam direktori <b>monetloader</b> pada folder root permainan Anda.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-header">
-                    <div class="step-num-badge">3</div>
-                    <h3>In-Game Konfigurasi</h3>
-                </div>
-                <p>Jalankan klien permainan. Skrip akan terinisiasi secara otomatis. Gunakan perintah chat khusus untuk mengakses antarmuka konfigurasi penuh.</p>
-            </div>
-        </div>
-    </section>
-        <!-- Katalog Produk Lua (Terintegrasi Deskripsi dan Tutorial dari Source Code) -->
-    <section class="products-section animate-up delay-2">
-        <div class="grid">
-            
-            <!-- Produk 1: Teleport Menu -->
-            <div class="product-card" onclick="openProduct('Teleport Menu', 'Rp 38.000', 'Cheats Module', 'FITUR UTAMA:\n• Teleport ke Market & Checkpoint secara presisi.\n• Dilengkapi UI Menu Mimgui yang elegan dan anti-lag.\n• Notifikasi sukses/gagal langsung ditampilkan di layar (chatlog).\n\nINFO PENTING:\nSkrip ini telah dioptimalkan untuk meminimalisasi deteksi. Support digunakan di hampir seluruh jenis Server SAMP dan Client.', '• Langkah 1: Buka In-Game chat lalu ketik command: /tpmenu\n• Langkah 2: Buka peta (Map) dan berikan tanda (Marker) pada lokasi yang ingin dituju.\n• Langkah 3: Buka kembali UI Teleport dan tekan tombol Marker.\n• Langkah 4: Untuk misi, cukup aktifkan opsi Checkpoint.\n\n*Catatan: Jangan bergerak hingga muncul pesan \'Teleport Berhasil\' pada chatlog.')">
-                <span class="category-tag">Cheats Module</span>
-                <h3>Teleport Menu</h3>
-                <p>Tampilan UI minimalis dengan dukungan teleportasi akurat ke marker maupun checkpoint misi.</p>
-                <div class="card-bottom">
-                    <span class="price">Rp 38.000</span>
-                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-                </div>
-            </div>
-
-            <!-- Produk 2: FPS Optimizer Menu -->
-            <div class="product-card" onclick="openProduct('FPS Optimizer', 'Rp 15.000', 'Performance', 'FITUR UTAMA:\n• Pembersihan Cache Memory (RAM) otomatis.\n• Sistem Limiter FPS yang dapat diatur via Slider (Max 240).\n• Fitur ekstrim \'Black Sky\' (Menghitamkan langit total) & \'Low Mode\' (Mengunci waktu ke siang hari) untuk menghindari rendering awan.\n• Indikator FPS kustom yang ringan.\n\nINFO PENTING:\nSolusi absolut untuk mencegah Stuttering dan Warning Opcode di area padat player/mapping.', '• Langkah 1: Ketik command: /fpsmenu di in-game.\n• Langkah 2 (Anti-Lag): Buka tab \'Sistem & Limit\', centang opsi \'Auto-Clear Cache\'. Ini akan membersihkan memori setiap 5 detik secara background.\n• Langkah 3 (Visual): Buka tab \'Mode & Visual\', pilih Mode Low Banget atau aktifkan Langit Hitam jika dirasa rendering mapping server terlalu berat.')">
-                <span class="category-tag">Performance</span>
-                <h3>FPS Optimizer</h3>
-                <p>Meningkatkan performa FPS dengan fitur Auto Clear RAM, Black Sky, FPS Indicator, dan Limiter.</p>
-                <div class="card-bottom">
-                    <span class="price">Rp 15.000</span>
-                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-                </div>
-            </div>
-
-            <!-- Produk 3: Vehicle Teleport (Get Vehicle / GV Menu) -->
-            <div class="product-card" onclick="openProduct('Vehicle Teleport', 'Rp 18.000', 'Cheats Module', 'FITUR UTAMA:\n• Mendeteksi seluruh ID dan Nama model kendaraan yang ada di sekitar player (Radar System).\n• Menarik (Warp) kendaraan ke lokasi player secara instan.\n• Fitur Masuk ke kendaraan dari jarak jauh tanpa animasi berjalan.\n• Menyimpan 5 riwayat (History) ID kendaraan terakhir yang dieksekusi.\n\nINFO PENTING:\nUI Mimgui dirancang responsif. Jika target terlalu jauh (di luar stream), skrip akan memberikan indikator error.', '• Langkah 1: Ketik command: /gvmenu\n• Langkah 2: Buka tab \'Radar Kendaraan Terdekat\'.\n• Langkah 3: Klik salah satu nama kendaraan di daftar radar. ID kendaraan akan otomatis terisi ke dalam kotak input.\n• Langkah 4: Klik tombol \'Tarik Kendaraan\' untuk membawa mobil ke arahmu, atau \'Teleport & Masuk\' untuk langsung berada di kursi kemudi.')">
-                <span class="category-tag">Cheats Module</span>
-                <h3>Vehicle Teleport</h3>
-                <p>Radar scan kendaraan sekitar, tarik instan, atau masuk ke bangku kemudi tanpa animasi berjalan.</p>
-                <div class="card-bottom">
-                    <span class="price">Rp 18.000</span>
-                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-                </div>
-            </div>
-
-            <!-- Produk 4: Maphack ESP Menu -->
-            <div class="product-card" onclick="openProduct('Maphack ESP Menu', 'Rp 28.000', 'Visual Enhancement', 'FITUR UTAMA:\n• Player ESP: Menampilkan Box 2D, Garis presisi, Nama, ID, Status HP/Armor aktual, Jarak, hingga Senjata yang sedang dipegang target.\n• World ESP: Integrasi posisi target langsung ke Minimap Radar.\n• Objek ESP: Mendeteksi keberadaan kendaraan, jaraknya, dan Pickup Loot di area sekitar.\n• Indikator Warna Cerdas: Hijau (Jauh), Kuning (Awas), Merah (< 20 meter).\n\nINFO PENTING:\nBerfungsi sangat mulus dengan render 3D-to-Screen conversion. Esensial untuk skenario pertempuran.', '• Langkah 1: Ketik command: /maphack\n• Langkah 2: Pilih tab \'Player ESP\' untuk mengaktifkan berbagai indikator musuh. (Sangat disarankan mencentang HP, Nama, dan Garis).\n• Langkah 3: Pilih tab \'World ESP\' lalu centang \'Maphack Minimap\' agar titik musuh (blip) selalu muncul di radar bundar ujung layar.')">
-                <span class="category-tag">Visual Enhancement</span>
-                <h3>Maphack ESP Menu</h3>
-                <p>Sistem visual taktis lengkap. Menampilkan Box, HP/Armor, Nama, Jarak, Senjata, hingga Maphack Radar.</p>
-                <div class="card-bottom">
-                    <span class="price">Rp 28.000</span>
-                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-                </div>
-            </div>
-
-            <!-- Produk 5: Repair Menu (Instant Repair) -->
-            <div class="product-card" onclick="openProduct('Instant Repair', 'Rp 38.000', 'Mechanic Module', 'FITUR UTAMA:\n• Mengisi Health (HP) kendaraan secara spesifik melalui input angka kustom.\n• Memperbaiki visual mesin (asap/api) dan panel bodi yang rusak seketika.\n• Sistem Sinkronisasi Bypass: Memberikan perintah jaringan (RakNet Fake Sync) agar perbaikan tervalidasi secara server-side.\n\nINFO PENTING:\nDengan fitur Toggle Bypass, sistem deteksi curang server dapat dimanipulasi dengan efektif.', '• Langkah 1: Kamu wajib sedang mengemudi/berada di dalam kendaraan.\n• Langkah 2: Ketik command: /repairmenu\n• Langkah 3: Pada bagian atas, ketik jumlah HP kendaraan (Maksimal normal adalah 1000).\n• Langkah 4: Jika server memiliki anti-cheat ketat, klik tombol \'Status Bypass\' menjadi ON sebelum menekan tombol Terapkan Darah.')">
-                <span class="category-tag">Mechanic Module</span>
-                <h3>Instant Repair Menu</h3>
-                <p>Modifikasi status HP kendaraan secara spesifik dan perbaikan visual bodi dengan perlindungan Anti-Cheat Bypass.</p>
-                <div class="card-bottom">
-                    <span class="price">Rp 38.000</span>
-                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-                </div>
-            </div>
-
-            <!-- Produk 6: Request Custom Lua -->
-            <div class="product-card" onclick="openProduct('Custom Engineering', 'Mulai Rp 10.000', 'Engineering', 'JASA PROGRAMMING CUSTOM LUA\n\nPunya alur sistem skrip sendiri? Kami siap mewujudkannya untuk Anda.\n\nKETENTUAN:\n• Harga awal penawaran Rp 10.000 (Menyesuaikan tingkat kerumitan arsitektur algoritma).\n• Clean code, dijamin ringan saat dieksekusi oleh library Mimgui.\n• Garansi perbaikan penuh jika ditemukan galat (bug) pada modul.', 'Prosedur Pemesanan:\n1. Siapkan catatan detail mengenai ide skrip (Nama command, desain menu, dan fungsi inti).\n2. Klik Lanjutkan Pembayaran di bawah ini.\n3. Anda akan diarahkan ke WhatsApp, silakan lampirkan konsep tersebut di dalam chat.\n4. Kami akan mengevaluasi dan memberikan estimasi waktu pengerjaan.')">
-                <span class="category-tag">Engineering</span>
-                <h3>Request Custom Lua</h3>
-                <p>Konsultasikan ide arsitektur skrip Anda. Dibuat dengan presisi tinggi menggunakan library Mimgui terkini.</p>
-                <div class="card-bottom">
-                    <span class="price">10K+</span>
-                    <div class="buy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Renxxno Store. Hak cipta dilindungi undang-undang.</p>
-    </footer>
-
-    <!-- ================= MODAL / POPUP CHECKOUT BERSTRUKTUR STATIS ================= -->
+    <!-- STRUKTUR HTML MODAL -->
     <div class="modal-overlay" id="productModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">×</span>
             
-            <!-- STEP 1: DETAIL PRODUK -->
             <div id="step-1" class="step-container">
                 <div class="modal-header">
                     <span class="category-tag" id="m-tag" style="font-size:0.75rem; margin-bottom: 8px;">Kategori</span>
@@ -345,7 +339,6 @@
                 </div>
             </div>
 
-            <!-- STEP 2: PEMBAYARAN -->
             <div id="step-2" class="step-container" style="display: none;">
                 <div class="modal-header">
                     <h2 id="m-title-pay" style="margin-bottom: 5px; font-size: 1.8rem; font-weight: 900;">Pilih Metode</h2>
@@ -378,7 +371,7 @@
         </div>
     </div>
 
-    <!-- Script Logika -->
+    <!-- SCRIPT LOGIKA JAVASCRIPT -->
     <script>
         let currentProduct = { name: "", price: "", tag: "" };
         const modal = document.getElementById("productModal");
@@ -426,7 +419,7 @@
             for (let r of radios) if (r.checked) { selectedMethod = r.value; break; }
 
             const waNumber = "6285749776994";
-            let textMessage = currentProduct.name === "Custom Engineering" 
+            let textMessage = currentProduct.name === "Request Custom Lua" 
                 ? `Halo Renxxno! Saya tertarik berdiskusi mengenai *${currentProduct.name}*.%0A%0ADeskripsi Konsep Skrip:%0A[Silakan jelaskan alur sistem yang Anda inginkan di sini]%0A%0AEstimasi Metode Pembayaran: ${selectedMethod}%0A%0AMohon konfirmasi kesediaan dan estimasi harganya.`
                 : `Halo Renxxno! Saya bermaksud melakukan pemesanan skrip berikut:%0A%0AProduk: ${currentProduct.name}%0AHarga: ${currentProduct.price}%0AMetode Pembayaran: ${selectedMethod}%0A%0AMohon instruksi selanjutnya untuk proses transaksi.`;
 
@@ -436,4 +429,3 @@
     </script>
 </body>
 </html>
-
