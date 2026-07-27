@@ -126,6 +126,7 @@
         
         .step-container { display: flex; flex-direction: column; height: 100%; overflow: hidden; }
         
+        /* Area yang bisa digulir (Scrollable Deskripsi) - Tambahan scroll-behavior smooth */
         .modal-body { flex-grow: 1; overflow-y: auto; padding-right: 15px; margin-right: -10px; margin-top: 10px; scroll-behavior: smooth; }
         .modal-body::-webkit-scrollbar { width: 4px; }
         .modal-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
@@ -176,7 +177,6 @@
     </style>
 </head>
 <body oncontextmenu="return false;">
-
     <a href="index.html" class="btn-back">
         <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
         Kembali
@@ -217,16 +217,7 @@
     <section class="products-section animate-up delay-2">
         <div class="grid">
             
-            <!-- Produk 1 -->
-            <div class="product-card" onclick="openProduct('Teleport Menu', 'Rp 38.000', 'Cheats Module', 'FITUR UTAMA:
-• Teleport ke Marker Map & Checkpoint Misi.
-• Bypass Anti-Cheat (Kalkulasi OnFoot & InCar otomatis).
-• Pengaturan Speed, Sleep, dan Render Bar Info di layar.
-• Aman dari sistem deteksi Airbreak server ketat.', 'CARA PENGGUNAAN:
-1. Ketik /tpmenu di chat in-game.
-2. Buka Map, letakkan Marker di lokasi tujuan.
-3. Pilih \'Teleport To Marker\' di menu.
-4. Jangan bergerak atau menekan tombol apapun selama persentase teleport berjalan agar sinkronisasi bypass berhasil.')">
+            <div class="product-card" onclick="openProduct('Teleport Menu', 'Rp 38.000', 'Cheats Module', 'FITUR UTAMA:\n• Teleport ke Marker Map & Checkpoint Misi.\n• Bypass Anti-Cheat (Kalkulasi OnFoot & InCar otomatis).\n• Pengaturan Speed, Sleep, dan Render Bar Info di layar.\n• Aman dari sistem deteksi Airbreak server ketat.', 'CARA PENGGUNAAN:\n1. Ketik /tpmenu di chat in-game.\n2. Buka Map, letakkan Marker di lokasi tujuan.\n3. Pilih \'Teleport To Marker\' di menu.\n4. Jangan bergerak atau menekan tombol apapun selama persentase teleport berjalan agar sinkronisasi bypass berhasil.')">
                 <span class="category-tag">Cheats Module</span>
                 <h3>Teleport Menu</h3>
                 <p>Sistem teleportasi akurat ke marker dan checkpoint misi dengan bypass deteksi Airbreak server-side.</p>
@@ -236,15 +227,7 @@
                 </div>
             </div>
 
-            <!-- Produk 2 -->
-            <div class="product-card" onclick="openProduct('Armor & Health Spawn', 'Rp 38.000', 'Cheats Module', 'FITUR UTAMA:
-• Pengisian HP & Armor secara Instan atau Perlahan (Gradual).
-• Penghapusan HP & Armor seketika (Set HP ke 10, Armor ke 0).
-• AC Bypass V5: Memanipulasi paket sinkronisasi server agar tidak terdeteksi anti-cheat saat proses healing.', 'CARA PENGGUNAAN:
-1. Ketik /hbmenu di chat in-game.
-2. Pilih tab \'Tab Health\' atau \'Tab Armor\'.
-3. Gunakan \'Perlahan\' untuk pengisian aman yang meniru regenerasi normal, atau \'Instan\' untuk penuh seketika.
-4. Tekan \'Berhenti\' untuk membatalkan pengisian yang sedang berjalan.')">
+            <div class="product-card" onclick="openProduct('Armor & Health Spawn', 'Rp 38.000', 'Cheats Module', 'FITUR UTAMA:\n• Pengisian HP & Armor secara Instan atau Perlahan (Gradual).\n• Penghapusan HP & Armor seketika (Set HP ke 10, Armor ke 0).\n• AC Bypass V5: Memanipulasi paket sinkronisasi server agar tidak terdeteksi anti-cheat saat proses healing.', 'CARA PENGGUNAAN:\n1. Ketik /hbmenu di chat in-game.\n2. Pilih tab \'Tab Health\' atau \'Tab Armor\'.\n3. Gunakan \'Perlahan\' untuk pengisian aman yang meniru regenerasi normal, atau \'Instan\' untuk penuh seketika.\n4. Tekan \'Berhenti\' untuk membatalkan pengisian yang sedang berjalan.')">
                 <span class="category-tag">Cheats Module</span>
                 <h3>Armor & Health Spawn</h3>
                 <p>Sistem regenerasi HP dan Armor presisi dengan metode bypass sinkronisasi real-time Anti-Cheat V5.</p>
@@ -254,16 +237,7 @@
                 </div>
             </div>
 
-            <!-- Produk 3 -->
-            <div class="product-card" onclick="openProduct('Cheat Menu', 'Rp 28.000', 'Cheats Module', 'FITUR UTAMA:
-• AirBrake (Terbang menembus seluruh objek map).
-• God Mode (Kebal peluru & HP terkunci di angka 100).
-• Anti Stun & Tidak Jatuh (No Fall animation clear).
-• Maraton (Lari tanpa lelah) & Speed Hack dengan Multiplier Slider.', 'CARA PENGGUNAAN:
-1. Ketik /cheatmenu di chat in-game.
-2. Centang fitur yang ingin digunakan pada kolom menu.
-3. Untuk mengaktifkan Speed Hack, geser slider multiplier untuk mengatur kecepatan laju karakter.
-4. Untuk Airbrake, Anda juga dapat tap 2x (double-tap) pada widget Player Info di layar untuk aktivasi on/off yang cepat.')">
+            <div class="product-card" onclick="openProduct('Cheat Menu', 'Rp 28.000', 'Cheats Module', 'FITUR UTAMA:\n• AirBrake (Terbang menembus seluruh objek map).\n• God Mode (Kebal peluru & HP terkunci di angka 100).\n• Anti Stun & Tidak Jatuh (No Fall animation clear).\n• Maraton (Lari tanpa lelah) & Speed Hack dengan Multiplier Slider.', 'CARA PENGGUNAAN:\n1. Ketik /cheatmenu di chat in-game.\n2. Centang fitur yang ingin digunakan pada kolom menu.\n3. Untuk mengaktifkan Speed Hack, geser slider multiplier untuk mengatur kecepatan laju karakter.\n4. Untuk Airbrake, Anda juga dapat tap 2x (double-tap) pada widget Player Info di layar untuk aktivasi on/off yang cepat.')">
                 <span class="category-tag">Cheats Module</span>
                 <h3>Cheat Menu</h3>
                 <p>Modul multifungsi mencakup AirBrake, God Mode, Anti Stun, No Fall, Maraton, hingga Speed Hack.</p>
@@ -273,15 +247,7 @@
                 </div>
             </div>
 
-            <!-- Produk 4 -->
-            <div class="product-card" onclick="openProduct('FPS Optimizer', 'Rp 15.000', 'Performance', 'FITUR UTAMA:
-• Auto-Clear Cache/RAM setiap 5 detik secara background.
-• Mode \'Black Sky\' (Langit polos) & \'Low Mode\' (Kunci waktu siang/cerah).
-• FPS Limiter (Hingga 240 FPS) & Indikator FPS Overlay.
-• Sangat ringan dan 100% aman (tidak terdeteksi sebagai cheat).', 'CARA PENGGUNAAN:
-1. Ketik /fpsmenu di chat in-game.
-2. Di tab \'Mode & Visual\', pilih Mode Low atau aktifkan Black Sky jika device mengalami render mapping berat.
-3. Di tab \'Sistem & Limit\', centang \'Auto-Clear Cache\' untuk menghilangkan lag/patah-patah (stuttering) saat berada di keramaian player.')">
+            <div class="product-card" onclick="openProduct('FPS Optimizer', 'Rp 15.000', 'Performance', 'FITUR UTAMA:\n• Auto-Clear Cache/RAM setiap 5 detik secara background.\n• Mode \'Black Sky\' (Langit polos) & \'Low Mode\' (Kunci waktu siang/cerah).\n• FPS Limiter (Hingga 240 FPS) & Indikator FPS Overlay.\n• Sangat ringan dan 100% aman (tidak terdeteksi sebagai cheat).', 'CARA PENGGUNAAN:\n1. Ketik /fpsmenu di chat in-game.\n2. Di tab \'Mode & Visual\', pilih Mode Low atau aktifkan Black Sky jika device mengalami render mapping berat.\n3. Di tab \'Sistem & Limit\', centang \'Auto-Clear Cache\' untuk menghilangkan lag/patah-patah (stuttering) saat berada di keramaian player.')">
                 <span class="category-tag">Performance</span>
                 <h3>FPS Optimizer</h3>
                 <p>Mengatasi memory leak dengan Auto-Clear RAM dan manipulasi render visual (Black Sky & Low Mode).</p>
@@ -291,15 +257,7 @@
                 </div>
             </div>
 
-            <!-- Produk 5 -->
-            <div class="product-card" onclick="openProduct('Vehicle Teleport', 'Rp 18.000', 'Cheats Module', 'FITUR UTAMA:
-• Radar Scanner: Mendeteksi ID, Nama, dan Jarak kendaraan di sekitar.
-• Tarik kendaraan (Warp) ke titik koordinat player.
-• Teleport dan langsung duduk di kursi kemudi tanpa animasi berjalan.
-• Menyimpan riwayat (History) 5 ID kendaraan terakhir.', 'CARA PENGGUNAAN:
-1. Ketik /gvmenu di chat in-game.
-2. Buka tab \'Radar Kendaraan Terdekat\', lalu klik nama kendaraan yang muncul untuk mengisi ID otomatis ke dalam kolom.
-3. Klik \'Tarik Kendaraan\' untuk membawa mobil mendekat, atau \'Teleport & Masuk\' untuk langsung mengemudikannya.')">
+            <div class="product-card" onclick="openProduct('Vehicle Teleport', 'Rp 18.000', 'Cheats Module', 'FITUR UTAMA:\n• Radar Scanner: Mendeteksi ID, Nama, dan Jarak kendaraan di sekitar.\n• Tarik kendaraan (Warp) ke titik koordinat player.\n• Teleport dan langsung duduk di kursi kemudi tanpa animasi berjalan.\n• Menyimpan riwayat (History) 5 ID kendaraan terakhir.', 'CARA PENGGUNAAN:\n1. Ketik /gvmenu di chat in-game.\n2. Buka tab \'Radar Kendaraan Terdekat\', lalu klik nama kendaraan yang muncul untuk mengisi ID otomatis ke dalam kolom.\n3. Klik \'Tarik Kendaraan\' untuk membawa mobil mendekat, atau \'Teleport & Masuk\' untuk langsung mengemudikannya.')">
                 <span class="category-tag">Cheats Module</span>
                 <h3>Vehicle Teleport</h3>
                 <p>Sistem radar penarikan kendaraan jarak jauh dan teleportasi kemudi tanpa animasi interaksi.</p>
@@ -309,14 +267,7 @@
                 </div>
             </div>
 
-            <!-- Produk 6 -->
-            <div class="product-card" onclick="openProduct('Maphack ESP Menu', 'Rp 28.000', 'Visual Enhancement', 'FITUR UTAMA:
-• Player ESP: Garis penunjuk, Kotak 2D, Nama, HP/Armor Aktual, Senjata, dan Jarak.
-• Indikator Warna Dinamis: Berubah (Hijau, Kuning, Merah) berdasarkan jarak ancaman.
-• World ESP: Deteksi Kendaraan, Pickup Loot, dan integrasi blip musuh ke Minimap Radar asli GTA.', 'CARA PENGGUNAAN:
-1. Ketik /maphack di chat in-game.
-2. Buka tab \'Player ESP\' untuk mengaktifkan lapisan visual target (Kotak, Garis, dan Bar HP).
-3. Buka tab \'World ESP\' dan centang \'Maphack Minimap\' agar posisi musuh dapat dipantau dari radar bundar di sudut layar.')">
+            <div class="product-card" onclick="openProduct('Maphack ESP Menu', 'Rp 28.000', 'Visual Enhancement', 'FITUR UTAMA:\n• Player ESP: Garis penunjuk, Kotak 2D, Nama, HP/Armor Aktual, Senjata, dan Jarak.\n• Indikator Warna Dinamis: Berubah (Hijau, Kuning, Merah) berdasarkan jarak ancaman.\n• World ESP: Deteksi Kendaraan, Pickup Loot, dan integrasi blip musuh ke Minimap Radar asli GTA.', 'CARA PENGGUNAAN:\n1. Ketik /maphack di chat in-game.\n2. Buka tab \'Player ESP\' untuk mengaktifkan lapisan visual target (Kotak, Garis, dan Bar HP).\n3. Buka tab \'World ESP\' dan centang \'Maphack Minimap\' agar posisi musuh dapat dipantau dari radar bundar di sudut layar.')">
                 <span class="category-tag">Visual Enhancement</span>
                 <h3>Maphack ESP Menu</h3>
                 <p>Sistem visual taktis lengkap. Menampilkan Box 2D, Bar HP, Senjata target, hingga integrasi Maphack Radar.</p>
@@ -326,15 +277,7 @@
                 </div>
             </div>
 
-            <!-- Produk 7 -->
-            <div class="product-card" onclick="openProduct('Instant Repair Menu', 'Rp 38.000', 'Mechanic Module', 'FITUR UTAMA:
-• Memperbaiki kerusakan visual (bodi penyok/asap) secara instan.
-• Mengatur modifikasi jumlah HP kendaraan sesuai keinginan user.
-• Dilengkapi tombol Toggle Bypass Anti-Cheat jaringan server-side (RakNet Fake Sync).', 'CARA PENGGUNAAN:
-1. Masuk ke dalam kendaraan yang ingin dieksekusi.
-2. Ketik /repairmenu di chat in-game.
-3. Jika bermain di server ketat, aktifkan \'Status Bypass: ON\' terlebih dahulu agar fake sync berjalan.
-4. Masukkan angka nominal HP (maksimal normal adalah 1000) lalu klik \'Terapkan Darah Kendaraan\'.')">
+            <div class="product-card" onclick="openProduct('Instant Repair Menu', 'Rp 38.000', 'Mechanic Module', 'FITUR UTAMA:\n• Memperbaiki kerusakan visual (bodi penyok/asap) secara instan.\n• Mengatur modifikasi jumlah HP kendaraan sesuai keinginan user.\n• Dilengkapi tombol Toggle Bypass Anti-Cheat jaringan server-side (RakNet Fake Sync).', 'CARA PENGGUNAAN:\n1. Masuk ke dalam kendaraan yang ingin dieksekusi.\n2. Ketik /repairmenu di chat in-game.\n3. Jika bermain di server ketat, aktifkan \'Status Bypass: ON\' terlebih dahulu agar fake sync berjalan.\n4. Masukkan angka nominal HP (maksimal normal adalah 1000) lalu klik \'Terapkan Darah Kendaraan\'.')">
                 <span class="category-tag">Mechanic Module</span>
                 <h3>Instant Repair Menu</h3>
                 <p>Modifikasi status HP kendaraan spesifik dan perbaikan visual bodi dengan perlindungan bypass sinkronisasi.</p>
@@ -344,14 +287,7 @@
                 </div>
             </div>
 
-            <!-- Produk 8 -->
-            <div class="product-card" onclick="openProduct('Custom Lua', 'Mulai Rp 10.000', 'Engineering', 'FITUR UTAMA:
-• Pembuatan skrip sesuai dengan alur sistem algoritma yang Anda minta.
-• Source code yang bersih (clean code) dengan performa UI ringan berbasis Mimgui.
-• Garansi perbaikan penuh jika ditemukan kegagalan fungsi (bug).', 'CARA PENGGUNAAN:
-1. Siapkan catatan konsep skrip Anda (Nama command, fungsi logika, dan kebutuhan menu UI).
-2. Klik tombol \'Lanjutkan ke Pembayaran\' di bawah menu ini.
-3. Kirimkan pesan berisi spesifikasi konsep tersebut melalui WhatsApp kami untuk evaluasi estimasi harga dan pengerjaan.')">
+            <div class="product-card" onclick="openProduct('Custom Lua', 'Mulai Rp 10.000', 'Engineering', 'FITUR UTAMA:\n• Pembuatan skrip sesuai dengan alur sistem algoritma yang Anda minta.\n• Source code yang bersih (clean code) dengan performa UI ringan berbasis Mimgui.\n• Garansi perbaikan penuh jika ditemukan kegagalan fungsi (bug).', 'CARA PENGGUNAAN:\n1. Siapkan catatan konsep skrip Anda (Nama command, fungsi logika, dan kebutuhan menu UI).\n2. Klik tombol \'Lanjutkan ke Pembayaran\' di bawah menu ini.\n3. Kirimkan pesan berisi spesifikasi konsep tersebut melalui WhatsApp kami untuk evaluasi estimasi harga dan pengerjaan.')">
                 <span class="category-tag">Engineering</span>
                 <h3>Custom Lua</h3>
                 <p>Konsultasikan ide arsitektur skrip Anda. Kami akan mewujudkannya dengan presisi tinggi dan kode yang efisien.</p>
@@ -367,9 +303,7 @@
     <footer>
         <p>&copy; 2026 Renxxno Store. Hak cipta dilindungi undang-undang.</p>
     </footer>
-
-    <!-- STRUKTUR HTML MODAL -->
-    <div class="modal-overlay" id="productModal">
+        <div class="modal-overlay" id="productModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">×</span>
             
@@ -427,7 +361,6 @@
         </div>
     </div>
 
-    <!-- SCRIPT LOGIKA JAVASCRIPT -->
     <script>
         let currentProduct = { name: "", price: "", tag: "" };
         const modal = document.getElementById("productModal");
