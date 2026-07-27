@@ -115,8 +115,7 @@
         <h1>Monetloader Setup</h1>
         <p>Arsitektur skrip Lua eksklusif dengan performa tingkat tinggi. Dirancang khusus untuk mengoptimalkan presisi dan gaya bermain Anda secara profesional.</p>
     </header>
-
-    <section class="guide-section animate-up delay-1">
+        <section class="guide-section animate-up delay-1">
         <h2 class="section-title">Tahap Instalasi</h2>
         <div class="steps-container">
             <div class="step-card">
@@ -239,7 +238,8 @@
     <footer>
         <p>&copy; 2026 Renxxno Store. Hak cipta dilindungi undang-undang.</p>
     </footer>
-        <!-- ================= CSS MODAL / POPUP CHECKOUT BERSTRUKTUR STATIS ================= -->
+
+    <!-- ================= CSS MODAL / POPUP CHECKOUT BERSTRUKTUR STATIS ================= -->
     <style>
         .modal-overlay {
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -263,6 +263,7 @@
         
         .step-container { display: flex; flex-direction: column; height: 100%; overflow: hidden; }
         
+        /* CLASS BARU UNTUK SCROLLING: Menambahkan ID spesifik agar bisa direset posisinya */
         .modal-body { flex-grow: 1; overflow-y: auto; padding-right: 15px; margin-right: -10px; margin-top: 10px; }
         .modal-body::-webkit-scrollbar { width: 4px; }
         .modal-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
@@ -311,8 +312,7 @@
             #m-title { font-size: 1.6rem; }
         }
     </style>
-
-    <!-- STRUKTUR HTML MODAL -->
+        <!-- STRUKTUR HTML MODAL -->
     <div class="modal-overlay" id="productModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">×</span>
@@ -324,7 +324,8 @@
                     <div id="m-price">Rp 0</div>
                 </div>
 
-                <div class="modal-body">
+                <!-- DIBERIKAN ID AGAR JS BISA MERESET SCROLL -->
+                <div class="modal-body" id="modal-scroll-area">
                     <span class="content-label">Informasi Skrip</span>
                     <p id="m-desc">Desc</p>
                     
@@ -377,6 +378,7 @@
         const modal = document.getElementById("productModal");
         const step1 = document.getElementById("step-1");
         const step2 = document.getElementById("step-2");
+        const modalScrollArea = document.getElementById("modal-scroll-area"); // Elemen Scroll
 
         function openProduct(name, price, tag, desc, tutorial) {
             currentProduct = { name, price, tag };
@@ -390,6 +392,11 @@
             step1.style.display = "flex"; 
             step2.style.display = "none";
             
+            // FITUR PERBAIKAN SCROLL: Paksa area scroll kembali ke titik paling atas
+            if (modalScrollArea) {
+                modalScrollArea.scrollTop = 0;
+            }
+
             modal.classList.add("active"); 
             document.body.style.overflow = "hidden"; 
         }
